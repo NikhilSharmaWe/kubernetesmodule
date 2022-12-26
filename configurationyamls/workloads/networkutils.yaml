@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: networkutils
+  labels:
+    app: networkutils
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: networkutils
+  template:
+    metadata:
+      labels:
+        app: networkutils
+    spec:
+      containers:
+      - name: networkutils
+        image: praqma/network-multitool
