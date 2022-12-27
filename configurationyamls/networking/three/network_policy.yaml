@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: netpol
+  namespace: ns-two
+spec:
+  podSelector:
+    matchLabels:
+      app: nginx
+  policyTypes:
+  - Egress
+  Egress:
+  - to: 
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ns-one

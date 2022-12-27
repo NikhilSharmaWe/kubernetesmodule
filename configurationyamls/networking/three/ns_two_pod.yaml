@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod 
+metadata:
+  name: anotherpod
+  namespace: ns-two
+  labels:
+    app: nginx
+spec:
+  containers:
+  - name: another-nginx-pod
+    image: nginx:latest
+    ports:
+    - containerPort: 80 
